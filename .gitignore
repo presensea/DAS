@@ -1,0 +1,17 @@
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+.DS_Store
+
+# Generated reports & provenance artifacts
+das_audit_*.html
+*.parquet
+*.jsonl
+*.zarr/
+*.h5
+*.hdf5

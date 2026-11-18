@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "das-audit"
+version = "0.1.0"
+description = "Command-line quality assessment and interactive HTML dashboard generator for Distributed Acoustic Sensing (DAS) datasets."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Elizaveta Dubrovinskaya", email = "edubro@taltech.ee"}
+]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy>=1.22",
+    "scipy>=1.9",
+]
+
+[project.optional-dependencies]
+all = [
+    "zarr>=2.14",
+    "h5py>=3.7",
+    "pandas>=1.5",
+    "pyarrow>=10.0",
+]
+
+[project.scripts]
+das-audit = "das_audit.cli:main"
+
+[project.urls]
+Homepage = "https://presensea.github.io"
+Repository = "https://github.com/presensea/DAS"
+
+[tool.setuptools.packages.find]
+where = ["src"]

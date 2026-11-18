@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# das-audit: DAS Data Quality Audit CLI wrapper
+# Usage: ./das-audit --path /path/to/data --export-html
+#
+# Examples:
+#   ./das-audit --path /path/to/das/data --export-html
+#   ./das-audit --dataset baltic_sea --path ./data --files '*.zarr' --export-html
+#   ./das-audit --path ./raw_data --convert-zarr --zarr-output ./converted.zarr --export-html
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+export PYTHONPATH="${SCRIPT_DIR}/src:${PYTHONPATH:-}"
+exec python3 -m das_audit "$@"
